@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{361F4D69-8025-414B-B26C-73BDC14438E7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>agricultorApp</RootNamespace>
+    <AssemblyName>agricultorApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>img\ico\AApp.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgricultorDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgricultorDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AgricultorDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AgricultorDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="app_rel\relClientesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app_rel\relClientesForm.Designer.cs">
+      <DependentUpon>relClientesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dao\ClienteDao.cs" />
+    <Compile Include="dao\PedidosDao.cs" />
+    <Compile Include="dao\ProdutoDao.cs" />
+    <Compile Include="formularios\about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\about.Designer.cs">
+      <DependentUpon>about.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\consultas\consultaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\consultas\consultaClientes.Designer.cs">
+      <DependentUpon>consultaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\consultas\consultaProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\consultas\consultaProdutos.Designer.cs">
+      <DependentUpon>consultaProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\manterClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\manterClientes.Designer.cs">
+      <DependentUpon>manterClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\manterPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\manterPedidos.Designer.cs">
+      <DependentUpon>manterPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\manterPrecos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\manterPrecos.Designer.cs">
+      <DependentUpon>manterPrecos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios\manterProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios\manterProdutos.Designer.cs">
+      <DependentUpon>manterProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\ClienteModel.cs" />
+    <Compile Include="model\PedidoItemModel.cs" />
+    <Compile Include="model\PedidoModel.cs" />
+    <Compile Include="model\ProdutoModel.cs" />
+    <Compile Include="Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="relClientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>relClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="util\AgricultorUtil.cs" />
+    <EmbeddedResource Include="app_rel\relClientesForm.resx">
+      <DependentUpon>relClientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\about.resx">
+      <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\consultas\consultaClientes.resx">
+      <DependentUpon>consultaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\consultas\consultaProdutos.resx">
+      <DependentUpon>consultaProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\manterClientes.resx">
+      <DependentUpon>manterClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\manterPedidos.resx">
+      <DependentUpon>manterPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\manterPrecos.resx">
+      <DependentUpon>manterPrecos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios\manterProdutos.resx">
+      <DependentUpon>manterProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="AgricultorDataSet.xsc">
+      <DependentUpon>AgricultorDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AgricultorDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AgricultorDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AgricultorDataSet.xss">
+      <DependentUpon>AgricultorDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AgricultorDataSet1.xsc">
+      <DependentUpon>AgricultorDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="AgricultorDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AgricultorDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AgricultorDataSet1.xss">
+      <DependentUpon>AgricultorDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="app_data\Agricultor.sdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\botaoconsulta.png" />
+    <Content Include="img\button_cancel.png" />
+    <Content Include="img\button_ok.png" />
+    <Content Include="img\copy_f2.png" />
+    <Content Include="img\decrypted.png" />
+    <Content Include="img\edit_add.png" />
+    <Content Include="img\edit_remove.png" />
+    <Content Include="img\filesave.png" />
+    <Content Include="img\icon_lettuce_100x100.png" />
+    <Content Include="img\ico\AApp.ico" />
+    <Content Include="img\ico\client.ico" />
+    <None Include="relClientes.xsc">
+      <DependentUpon>relClientes.xsd</DependentUpon>
+    </None>
+    <None Include="relClientes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>relClientes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="relClientes.xss">
+      <DependentUpon>relClientes.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\AApp.ico" />
+    <None Include="Resources\tabela.ico" />
+    <None Include="Resources\pedidos.ico" />
+    <None Include="Resources\product.ico" />
+    <None Include="Resources\client.ico" />
+    <Content Include="Resources\lettuce1600.png" />
+    <None Include="Resources\lettuce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
